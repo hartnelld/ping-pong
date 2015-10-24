@@ -3,5 +3,15 @@ $(document).ready(function() {
   var currentValue = 1;
 
   while (currentValue <= goal) {
+    if (((currentValue % 3) === 0) && ((currentValue % 5) === 0)) {
+      $(".dynamic-list").append("<li>ping-pong</li>");
+    } else if ((currentValue % 3) === 0) {
+      $(".dynamic-list").append("<li>ping</li>");
+    } else if ((currentValue % 5) === 0) {
+      $(".dynamic-list").append("<li>pong</li>");
+    } else {
+      $(".dynamic-list").append("<li>" + currentValue + "</li>");
+    };
+    currentValue++;
   };
 });
